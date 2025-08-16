@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Item - Astha Electronics</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-brand">
+      <img src="asthalogo.jpg" alt="Logo" class="header-logo">
+      <h1>Astha Electronics</h1>
+    </div>
+    <nav>
+      <a href="inventory.html">Inventory</a>
+      <a href="billing.html">Billing</a>
+      <a href="add-item.html" class="active">Add Item</a>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h2>Add New Item</h2>
+      <div id="add-form" style="display:none;">
+        <input type="text" id="item-name" placeholder="Item Name" required>
+        <input type="number" id="item-qty" placeholder="Quantity" min="0" required>
+        <input type="number" id="item-price" placeholder="Price" min="0" step="0.01" required>
+        <input type="text" id="item-image" placeholder="Image URL">
+        <button onclick="addItem()">Add Item</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Password Modal -->
+  <div id="passwordModal" class="modal">
+    <div class="modal-content">
+      <h3>Enter Admin Password</h3>
+      <input type="password" id="adminPassword" placeholder="Password">
+      <button onclick="verifyPassword()">Submit</button>
+      <p id="passwordError" class="error-message">Incorrect password!</p>
+    </div>
+  </div>
+
+  <!-- Change the script reference at the bottom of the file -->
+<script src="js/add-item.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory - Astha Electronics</title>
+    <!-- Favicon and CSS links -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <div class="header-brand">
+        <img src="asthalogo.jpg" alt="Logo" class="header-logo" />
+        <h1>Astha Electronics</h1>
+      </div>
+      <nav>
+        <a href="inventory.html" class="active">Inventory</a>
+        <a href="billing.html">Billing</a>
+        <a href="add-item.html">Add Item</a>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>Inventory Dashboard</h2>
+          <button
+            id="toggleEdit"
+            onclick="toggleEdit()"
+            title="Toggle Edit Mode"
+          >
+            🔒
+          </button>
+        </div>
+        <input
+          type="text"
+          id="search"
+          placeholder="Search items..."
+          oninput="searchItem()"
+        />
+        <div id="itemList" class="item-list"></div>
+      </div>
+    </main>
+
+    <!-- Password Modal -->
+    <div id="passwordModal" class="modal">
+      <div class="modal-content">
+        <h3>Enter Admin Password</h3>
+        <input
+          type="password"
+          id="adminPassword"
+          placeholder="Password"
+          autocomplete="current-password"
+        />
+        <button onclick="verifyPassword()">Submit</button>
+        <p id="passwordError" class="error-message">Incorrect password!</p>
+      </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/inventory.js"></script>
+  </body>
+</html>
